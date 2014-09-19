@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Logo Sapiens</title>
+        <link rel="stylesheet" type="text/css" href="./css/jquery-ui-1.10.4.custom.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="./css/icons.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" media="all" />
+    </head>
+
+    <body>
+        <!--content-->
+        <header id="header">
+            <figure>
+                <a href="#">
+                    <img src="./img/logo-sapiens.png" alt="" />
+                </a>
+            </figure>
+        </header>
+
+        <section id="content"> </section>
+
+        <footer id="footer">
+            <section id="stats" class="row">
+                <p id="score" class="col-xs-6"> <span></span>  Puntos </p>
+
+                <p id="money" class="col-xs-6"> <span></span> Friticas </p>
+            </section>
+
+            <section class="ads">
+                <p>Publicidad</p>
+            </section>
+        </footer>
+        <!--/content-->
+
+        <!--templates-->
+        <script id="helps-template" type="text/template">
+            <section id="buttons" class="row">
+                    <div class="col-xs-3 col-sm-2 col-lg-1">
+                        <a class="btn btn-primary btn-back" href="#level/<%= level_number %>/logo/<%= cid  %>"><span class="icon-pigpeny"></a></span>
+                    </div>
+            </section>
+
+            <section id="ayudas" class="container show-top-margin separate-rows tall-rows">
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/data">Datos de la marca</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/sound">Sonido</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/picture">Pista Visual</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/char-mix">Sopa de letras</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/puzzle">Rompe Cabezas</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/buy-char">Comprar Letras</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8"><a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>/buy-answer">Comprar Respuesta</a></div>
+                    <div class="col-xs-4"><span class="f">100F</span></div>
+                </div>
+            </section>
+        </script>
+
+        <script id="level-template" type="text/template">
+            <figure>
+                <a href="#/level/<%= number %>">
+                    <img src="./img/levels/<%= number %>.jpg" alt="Nivel <%= number %>" />
+                </a>
+
+                <figcaption>
+                    <p>
+                        <a href="#/level/<%= number %>" class="btn btn-primary" type="button">Nivel <%= number %></a>
+                    </p>
+
+                    <p class="starts">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                    </p>
+
+                    <p class="progress-icon">
+                        <span class="icon-uniF778"></span>
+                    </p>
+                </figcaption>
+
+                <div class="icons"><span class="lock"></span></div>
+            </figure>
+
+            <section class="extra row-fluid">
+                <p class="col-xs-4"> <span class="icon-pigpenx"></span> <span class="icon-pigpenw"></span></p>
+
+                <p class="col-xs-4"> <%= completed %>/<%= total %> </p>
+
+                <p class="col-xs-4"> <span>0</span> <span class="icon-uniF738"></span> </p>
+            </section>
+        </script>
+
+        <script id="logo-template" type="text/template">
+            <section id="buttons" class="row">
+                    <div class="col-xs-3 col-sm-2 col-lg-1">
+                        <a class="btn btn-primary btn-back" href="#level/<%= level_number %>"><span class="icon-pigpeny"></a></span>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-offset-7 col-sm-3 col-lg-offset-9 col-lg-2">
+                        <a class="btn btn-primary" href="#help/<%= level_number %>/<%= cid %>">Ayudas</a></span>
+                    </div>
+            </section>
+
+            <figure id="logo">
+                <div class="container">
+                    <img  src="./img/logos/<%= img %>" alt="" />
+
+                    <% if(completed) { %>
+                        <figure class="gold-medal">
+                            <img src="img/completado-medalla-oro.png" alt="" />
+                        </figure>
+                    <% } %>
+
+                    <% if(completed) { %>
+                        <div class="icons"><a class="more-info" href="#more-info/<%= level_number %>/logo/<%= cid %>"></a></div>
+                    <% } %>
+                </div>
+
+                <figcaption id="input">
+                    <input <%= completed ? 'readonly' : ''%> type="text" value="<%= completed ? name : ''%>"/>
+
+                    <div id="segments">
+                        <% for(var i = 0; i < name.length; i++) { %>
+                            <div class="segment"></div>
+                        <% } %>
+                    </div>
+
+                    <button class="btn btn-primary" type="button">Aceptar</button>
+                </figcaption>
+            </figure>
+
+            <% if(prev_logo) { %>
+                <div class="arrow-left"><a href="#level/<%= level_number %>/logo/<%= prev_logo.cid %>" class="icon-arrow-left"></a></div>
+            <% } %>
+
+            <% if(next_logo) { %>
+                <div class="arrow-right"><a href="#level/<%= level_number %>/logo/<%= next_logo.cid %>" class="icon-arrow-right"></a></div>
+            <% } %>
+        </script>
+
+        <script id="logos-preview-template" type="text/template">
+            <section id="buttons" class="row">
+                <div class="col-xs-3 col-sm-2 col-lg-1">
+                    <a class="btn btn-primary btn-back" href="#"><span class="icon-pigpeny"></span></a>
+                </div>
+            </section>
+
+            <section>
+                <ul id="logos" class="row"></ul>
+            </section>
+        </script>
+
+        <script id="logo-preview-template" type="text/template">
+            <figure id="logo">
+                <div class="container">
+                    <a href="#/level/<%= level_number %>/logo/<%= cid %>"><img src="./img/logos/<%= img %>" alt="" /></a>
+
+                    <% if(completed) { %>
+                        <figure class="gold-medal">
+                            <img src="img/completado-medalla-oro.png" alt="" />
+                        </figure>
+                    <% } %>
+                </div>
+            </figure>
+        </script>
+
+        <script id="puzzle-template" type="text/template">
+            <section id="buttons" class="row">
+                    <div class="col-xs-3 col-sm-2 col-lg-1">
+                        <a class="btn btn-primary btn-back" href="#level/<%= level_number %>/logo/<%= cid  %>"><span class="icon-pigpeny"></a></span>
+                    </div>
+            </section>
+
+            <div class="help"><canvas id="canvas"></canvas></div>
+            <!--<script type="text/javascript" src="./js/puzzle.js"></script>-->
+        </script>
+        <!--/templates-->
+
+        <!--libs-->
+        <script src="./js/lib/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/lib/jquery-ui-1.10.4.custom.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/lib/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/lib/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/lib/backbone.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/puzzle.js" type="text/javascript" charset="utf-8"></script>
+        <!--/libs-->
+
+        <!--backbone-->
+        <script src="./js/models/logo.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/collections/logos.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/logo.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="./js/models/level.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/collections/levels.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/level.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="./js/views/helps.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/help_puzzle.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/levels.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/logop.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/views/logosp.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="./js/app.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="./js/routers/router.js" type="text/javascript" charset="utf-8"></script>
+        <!--/backbone-->
+    </body>
+</html>

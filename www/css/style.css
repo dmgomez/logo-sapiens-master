@@ -1,0 +1,253 @@
+body {
+    background: url('../img/back.png');
+    font-family: Helvetica;
+    font-size: 16px;
+    margin: 0;
+    position: relative;
+}
+#ayudas {
+    color: black;
+    margin: 2em auto;
+    max-width: 600px;
+    text-align: left;
+}
+#ayudas .row + .row {
+    margin-top: 0.4em;
+}
+#ayudas .row div + div {
+    padding-top: 0.4em;
+}
+#content {
+    margin: 1em auto 0 auto;
+    text-align: center;
+}
+#content #buttons {
+    margin: 0 auto;
+}
+#content #buttons div:nth-of-type(2) .btn {
+    font-size: 28px;
+    padding: 0.1em 0.4em;
+}
+#content #buttons .btn-back {
+    font-size: 28px;
+    padding: 0.2em 0.3em 0em 0.2em;
+}
+#content #logo  {
+    margin: 0 auto;
+    max-width: 300px;
+    min-width: 200px;
+    text-align: center;
+    width: 60%;
+}
+#content #logo .container {
+    padding: 2em;
+    position: relative;
+    width: 100%;
+}
+#content #logo .container .icons {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+#content #logo .container img {
+    width: 100%;
+}
+#content #logo #input {
+    margin: 0.5em auto;
+    text-align: center;
+}
+#content #logo #input button,
+#content #logo #input input,
+#content #logo #input #segments {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+#content #logo #input button {
+    font-size: 28px;
+    margin-top: 0.4em;
+    padding: 0.1em 0.4em;
+}
+#content #logo #input input,
+#content #logo #input #segments {
+    max-width: 260px;
+    width: 100%;
+}
+#content #logo #input input {
+    border: none;
+    border-radius: 5px;
+    font-size: 28px;
+    padding: 0.1em 0.3em 0em 0.3em;
+}
+#content #logo #input input.wrong-guess {
+    border: 2px solid red;
+    box-shadow: 0 0 8px #800080;
+    color: red;
+}
+#content #logo #input #segments .segment {
+    border-top: 2px solid #333;
+    display: inline-block;
+    max-height: 1px;
+    vertical-align: top;
+    width: 0.8em;
+}
+#content #levels {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+#content #levels .level {
+    padding: 0.8em;
+}
+#content #levels .level figure {
+    border-radius: 5px;
+    box-shadow: 5px 5px 9px #AAA;
+    position: relative;
+}
+#content #levels .level figure a,
+#content #levels .level figure figcaption {
+    display: inline-block;
+    margin: 0.1em;
+    vertical-align: top;
+}
+#content #levels .level figure a img {
+    width: 120px;
+}
+#content #levels .level figure figcaption p {
+    margin: 0.8em auto;
+    text-align: center;
+}
+#content #levels .level figure figcaption .btn {
+    width: 100px;
+}
+#content #levels .level figure figcaption .progress-icon {
+    background-color: #22BCE0;
+    border-radius: 5px;
+    color: #FFF;
+    margin-top: 30px;
+    width: 30px;
+}
+#content #levels .level .extra {
+    border-top: 3px solid #22BCE0;
+    color: #7A7A7A;
+    padding-top: 0.6em;
+    text-align: center;
+}
+#content #levels .level .extra p:first-child {
+    text-align: left;
+}
+#content #levels .level .extra p:last-child {
+    text-align: right;
+}
+#content #levels .level .extra p:last-child span:first-child {
+    color: #FFF;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 0.1em 0.3em;
+}
+#content #levels .level .extra p:last-child span:last-child {
+    color: #38C;
+}
+#content #levels .level .icons {
+    min-height: 100%;
+    padding: 1.5em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+#content #logos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#content #logos .logo-preview img {
+    width: 100%;
+}
+#header {
+    box-shadow: 0 7px 9px #CCC;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+}
+#header figure a img {
+    width: 300px;
+}
+#footer #stats {
+    margin: 2em 0 0.5em 0;
+    padding: 0.2em;
+}
+#footer #stats p {
+    margin: 0;
+}
+#footer #stats #money {
+    text-align: right;
+}
+#footer #stats #money:after {
+    content: url('../img/platanito.png');
+    position: relative;
+    top: 6px;
+}
+#footer #stats #score {
+    margin-top: 6px;
+}
+#footer .ads {
+    background-color: #542E91;
+    border-radius: 5px;
+    color: #FFF;
+    height: 38px;
+    margin: 0.5em 0 0 0;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+}
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    top: 280px;
+}
+.arrow-left {
+    left: 0px;
+}
+.arrow-right {
+    right: 0px;
+}
+.arrow-left a,
+.arrow-right a {
+    background-color: #BBB;
+    font-size: 2.0em;
+    color: #888;
+    display: block;
+    line-height: 6.2em;
+    opacity: 0.6;
+    text-decoration: none;
+}
+.arrow-left a {
+    border-radius: 0 10px 10px 0;
+    padding-right: 0.1em;
+}
+.arrow-right a {
+    border-radius: 10px 0 0 10px;
+    padding-left: 0.1em;
+}
+.btn {
+    color: white;
+}
+.lock:before {
+    content: url('../img/lock.png');
+    opacity: 0.8;
+}
+.more-info:before {
+    content: url('../img/more-info.png');
+    opacity: 0.8;
+}
+.gold-medal {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.gold-medal img {
+    max-width: 80px;
+    opacity: 0.8;
+}
